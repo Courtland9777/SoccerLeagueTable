@@ -12,7 +12,7 @@ if (File.Exists(file))
         if(line.Contains("---")) continue;
         
         var lineArr = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        var tempSpan = int.Parse(lineArr[6][..2]) - int.Parse(lineArr[8][..2]);
+        var tempSpan = Math.Abs(int.Parse(lineArr[6][..2]) - int.Parse(lineArr[8][..2]));
         if (tempSpan < minSpan)
         {
             minSpan = tempSpan;
